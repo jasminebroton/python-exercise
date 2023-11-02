@@ -30,7 +30,18 @@ class Movies:
             )
     def prints(self):
         for movie in self._movies:
-            print(f"Movie: {movie['name']}")
+            print(movie['name'])
             print()
+    def search(self, key):
+        key = key.lower()
+        found = False
+        for movie in self._movies:
+            movie_title = movie['name'].lower()
+            if key in movie_title:
+                print(movie['name'])
+                found = True
+        if not found:
+            print("No movies found")
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
+    movies.prints()
