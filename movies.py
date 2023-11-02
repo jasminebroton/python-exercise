@@ -42,6 +42,16 @@ class Movies:
                 found = True
         if not found:
             print("No movies found")
+    def searchCast(self, key):
+        key = key.lower()
+        found = False
+        for movie in self._movies:
+            if any(key in actor.lower() for actor in movie['cast']):
+                print(movie['name'])
+                print(movie['cast'])
+                found = True
+        if not found:
+            print("No movies found")
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
     movies.prints()
