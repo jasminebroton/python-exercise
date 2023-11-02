@@ -28,6 +28,9 @@ class Movies:
                     'cast': movie_cast
                 }
             )
-
+    def prints(self):
+        for movie in self._movies:
+            print(f"Movie: {movie['name']}")
+            print()
 if __name__ == "__main__":
     movies = Movies('./movies.txt')
